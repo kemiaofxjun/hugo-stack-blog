@@ -45,12 +45,12 @@ code {
 
 //------------------------------------------------
 // 文章内容引用块样式
-.article-content {
-  blockquote {
-    border-left: 6px solid #358b9a1f !important;
-    background: #3a97431f;
-  }
-}
+// .article-content {
+//   blockquote {
+//     border-left: 6px solid #358b9a1f !important;
+//     background: #3a97431f;
+//   }
+// }
 // ---------------------------------------
 // 代码块基础样式修改
 .highlight {
@@ -777,12 +777,12 @@ kbd {
 
 //------------------------------------------------
 // 文章内容引用块样式
-.article-content {
-  blockquote {
-    border-left: 6px solid #358b9a1f !important;
-    background: #3a97431f;
-  }
-}
+// .article-content {
+//   blockquote {
+//     border-left: 6px solid #358b9a1f !important;
+//     background: #3a97431f;
+//   }
+// }
 
 // ---------------------------------------
 // 代码块基础样式修改
@@ -900,12 +900,27 @@ code {
 }
 
 // 文章内容引用块样式
-.article-content {
-  blockquote {
-    border-left: 6px solid #004b28 !important;
-    background: #366e33;
-  }
+blockquote {
+  position: relative;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid #4cafef; /* 左边彩条 */
+  background: #f7f9fc; /* 淡背景色 */
+  border-radius: 6px;
+  font-style: italic;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
+
+blockquote::before {
+  content: "❝";
+  font-size: 2rem;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+  color: #4cafef;
+}
+
 
 /*文章内部-页脚-相关文章图片圆角*/
 .article-list--compact article .article-image img {
@@ -1335,3 +1350,42 @@ div.loaded div.spinner-box {
   scrollbar-width: thin; /* auto | thin | none */
   scrollbar-color: rgba(0, 0, 0, 0.3) transparent; /* 半透明黑色滑块，透明轨道 */
 }
+
+// hugo的外挂标签用法
+/* Callout 基础样式 */
+blockquote.callout {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem 1.2rem;
+  margin: 1.25rem 0;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  border-left: 6px solid transparent;
+  background: var(--callout-bg, #f7f7f9);
+  color: inherit;
+}
+
+blockquote.callout .callout-icon {
+  font-size: 1.25rem;
+  margin-right: 0.75rem;
+  line-height: 1.2;
+  user-select: none;
+}
+
+blockquote.callout .callout-content > :first-child { margin-top: 0; }
+blockquote.callout .callout-content > :last-child { margin-bottom: 0; }
+
+/* 类型配色（可按需调整或接入主题变量） */
+blockquote.callout.note    { --callout-bg: #e7f5ff; border-left-color: #4dabf7; }
+blockquote.callout.tip     { --callout-bg: #ebfbee; border-left-color: #51cf66; }
+blockquote.callout.important { --callout-bg: #fff9db; border-left-color: #fab005; }
+blockquote.callout.warning { --callout-bg: #fff5f5; border-left-color: #fa5252; }
+
+/* 深色模式可选优化（Stack 主题一般有 data-theme="dark"） */
+[data-theme="dark"] blockquote.callout {
+  background: color-mix(in oklab, var(--theme, #1b1b1f) 92%, white);
+  box-shadow: none;
+  opacity: 0.98;
+}
+
+
