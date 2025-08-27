@@ -229,6 +229,24 @@ menu:
           url: https://github.com/kemiaofxjun
           params:
               icon: brand-github
+        
+        - identifier: telegram
+          name: telegram
+          url: https://t.me/KemiaoJun
+          params:
+              icon: brand-telegram
+
+        - identifier: bilibili
+          name: bilibili
+          url: https://space.bilibili.com/3546643173477234
+          params:
+              icon: brand-bilibili
+
+        - identifier: email
+          name: email
+          url: mailto:me@mail.kemeow.top
+          params:
+              icon: mail
 
         - identifier: x
           name: x
