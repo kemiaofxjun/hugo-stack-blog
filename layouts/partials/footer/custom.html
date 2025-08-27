@@ -1,0 +1,81 @@
+<!-- 回到顶部按钮 -->
+<style>
+  #backTopBtn {
+    position: fixed;
+    right: 24px;
+    bottom: 80px;
+    width: 44px;
+    height: 44px;
+    background: var(--card-background);
+    border-radius: 50%;
+    box-shadow: var(--shadow-l2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s, visibility .25s;
+  }
+  #backTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  #backTopBtn svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--primary);
+  }
+</style>
+
+<script>
+  // 防止重复插入
+  if (!document.getElementById('backTopBtn')) {
+    const btn = document.createElement('div');
+    btn.id = 'backTopBtn';
+    btn.innerHTML = `
+      <svg viewBox="0 0 24 24">
+        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+      </svg>`;
+    document.body.appendChild(btn);
+
+    // 点击滚动到顶部
+    btn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // 滚动到 200px 时出现
+    const toggle = () => {
+      btn.classList.toggle('show', window.scrollY > 200);
+    };
+    window.addEventListener('scroll', toggle);
+    toggle();      // 初始检查一次
+  }
+</script>
+
+<!-- 单篇文章 PV 统计（不蒜子） -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.css" crossorigin="anonymous" />
+<script>
+    NProgress.start();
+    document.addEventListener("readystatechange", () => {
+        if (document.readyState === "interactive") NProgress.inc(0.8);
+        if (document.readyState === "complete") NProgress.done();
+    });
+</script>
+
+<!-- Add blog running time -->
+<script>
+    let s1 = '2025-8-26'; //website start date
+    s1 = new Date(s1.replace(/-/g, "/"));
+    let s2 = new Date();
+    let timeDifference = s2.getTime() - s1.getTime();
+
+    let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+    let result = days + "天" + hours + "小时" + minutes + "分钟";
+    document.getElementById('runningdays').innerHTML = result;
+</script>
