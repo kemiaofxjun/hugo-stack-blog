@@ -297,3 +297,7 @@ markup:
         style: github-dark
 
     enablePreloadingAnim: true # 开屏动画，false为关闭，true为开启
+
+    artitalk:
+       appId: "JSFRQ0dWtJkWQCOJA7OTGn8i-MdYXbMMI"  # 替换为真实ID
+       appKey: "lWpD9ALEFeduT1VTCeUT8YKA" # 替换为真实KEY
