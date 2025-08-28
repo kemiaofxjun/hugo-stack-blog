@@ -1388,4 +1388,35 @@ blockquote.callout.warning { --callout-bg: #fff5f5; border-left-color: #fa5252; 
   opacity: 0.98;
 }
 
+// 说说字样加深
+  /* 提高按钮文字对比度 */
+  .arti-input-btn, .arti-loadmore-btn {
+    color: #ffffff !important;
+    background-color: #007acc !important;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
 
+  /* 鼠标悬停时更明显 */
+  .arti-input-btn:hover, .arti-loadmore-btn:hover {
+    background-color: #005fa3 !important;
+  }
+
+  /* 输入框文字颜色 */
+  .arti-input {
+    color: #333 !important;
+  }
+
+  /* 深色模式适配 */
+  @media (prefers-color-scheme: dark) {
+    .arti-input-btn, .arti-loadmore-btn {
+      background-color: #3399ff !important;
+      color: #fff !important;
+    }
+
+    .arti-input {
+      color: #eee !important;
+    }
+  }
