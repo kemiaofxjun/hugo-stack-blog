@@ -1,5 +1,5 @@
 ---
-title: "我的说说"
+title: "微语"
 layout: "single"
 type: "shuoshuo"
 slug: "shuoshuo"  # 使用单栏布局
