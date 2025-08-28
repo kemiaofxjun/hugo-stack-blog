@@ -33,7 +33,16 @@ menu:
 
 ## 资源分享项目
 
-::github{repo="Kemeow815/kemiaofx"}
+<div style="text-align:center; margin:20px 0;">
+  <a href="https://github.com/Kemeow815/kemiaofx" target="_blank" rel="noopener">
+    <img 
+      src="https://readme.kemeow.top/api/pin/?username=Kemeow815&repo=kemiaofx&theme=dark" 
+      alt="KemiaoFX GitHub 项目"
+      style="max-width:100%;"
+    >
+  </a>
+</div>
+
 
 - TG频道: [克喵分享](https://t.me/kemiaofx_me)
 

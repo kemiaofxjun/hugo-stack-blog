@@ -17,10 +17,15 @@ menu:
   new Artitalk({
     appId: "20In9roWavNrTMj76UmVEALE-MdYXbMMI",
     appKey: "Y8DPaodZp5fsFEFLMTwj2QEk",
-    customClass: "my-artitalk",
-    color1: "linear-gradient(45deg,rgba(109,208,242,0.75) 15%,rgba(245,154,190,0.75) 85%)",
-    color2: "linear-gradient(45deg,rgba(109,208,242,0.75) 15%,rgba(245,154,190,0.75) 85%)",
-    color3: "linear-gradient(45deg,rgba(109,208,242,0.75) 15%,rgba(245,154,190,0.75) 85%)",
+    serverURL: "https://artitalk.314926.xyz",
+    pageSize: 15, //每页评论数量
+    shuoPla: '留下你的评论', //评论框里显示，可以不填
+    motion: 1, //加载动画的开关 0（关闭），1（开启）
+    atComment: 1, //评论功能的开关 0（关闭），1（开启）
+    bgImg: '', //评论框里的背景，可以不填
+    color1: '#ffffff', //自定义颜色，有几种方式
+    color2: '#ffffff',
+    color3: '#3b9a9c',
   });
 </script>
 <style>
